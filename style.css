@@ -1,0 +1,758 @@
+/* ==========================================================================
+   style.css — التصميم الشامل والمتكامل لمنصة English Mastery
+   طول الملف: ~880 سطر
+   ------------------------------------------------------------
+   ✏️ للتعديل: عدّل الألوان في قسم :root والمتغيرات أدناه
+   ========================================================================== */
+
+/* ==========================================================================
+   0. المتغيرات الرئيسية (Theme Variables)
+   --------------------------------------------------------------------------
+   لتغيير ألوان الثيم، كل ما عليك تعديل القيم هنا:
+   --primary      : اللون الأساسي للأزرار والروابط
+   --secondary    : اللون الثانوي للتفاعلات hover
+   --success      : لون المؤشرات الإيجابية
+   --error        : لون التحذير والأخطاء
+   --warning      : لون التنبيهات
+   --dark         : لون النص الرئيس والخلفيات في الوضع الداكن
+   --light        : لون الخلفيات الفاتحة
+   --gray-100..900: درجات الرمادي
+   ========================================================================== */
+:root {
+  /* الألوان الأساسية */
+  --primary:    #1E88E5;
+  --secondary:  #1565C0;
+  --success:    #43A047;
+  --error:      #E53935;
+  --warning:    #FDD835;
+
+  /* ألوان خلفية ونص */
+  --dark:       #212121;
+  --light:      #FAFAFA;
+
+  /* تدرجات الرمادي */
+  --gray-100:   #F5F5F5;
+  --gray-200:   #EEEEEE;
+  --gray-300:   #E0E0E0;
+  --gray-400:   #BDBDBD;
+  --gray-500:   #9E9E9E;
+  --gray-600:   #757575;
+  --gray-700:   #616161;
+  --gray-800:   #424242;
+  --gray-900:   #212121;
+
+  /* مقاسات ووحدات */
+  --border-radius:    8px;
+  --shadow-light:     0 2px 4px rgba(0,0,0,0.05);
+  --shadow-medium:    0 4px 8px rgba(0,0,0,0.1);
+  --transition-fast:  0.2s ease-in-out;
+  --transition-base:  0.3s ease-in-out;
+  --ff-base:          'Cairo', sans-serif;
+  --fz-xs:            0.75rem;
+  --fz-sm:            0.875rem;
+  --fz-base:          1rem;
+  --fz-lg:            1.125rem;
+  --fz-xl:            1.25rem;
+  --fz-2xl:           1.5rem;
+}
+
+/* ==========================================================================
+   1. Reset & Box Sizing
+   --------------------------------------------------------------------------
+   تهيئة الصندوق والهوامش والملء لكافة العناصر
+   ========================================================================== */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ==========================================================================
+   2. Global Styles
+   --------------------------------------------------------------------------
+   الخطوط، خلفية الصفحة، اتجاه النص (rtl)
+   ========================================================================== */
+html {
+  font-family: var(--ff-base);
+  font-size: var(--fz-base);
+  scroll-behavior: smooth;
+}
+body {
+  background-color: var(--gray-100);
+  color: var(--dark);
+  line-height: 1.6;
+  direction: rtl;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ==========================================================================
+   3. Container Utility
+   --------------------------------------------------------------------------
+   لف المركزية والعرض الأقصى للمحتوى
+   ========================================================================== */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* ==========================================================================
+   4. Typography (عناوين، فقرات، روابط)
+   --------------------------------------------------------------------------
+   استعمال مقاسات ثابتة وتدرجات رمادية
+   ========================================================================== */
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--dark);
+}
+h1 { font-size: var(--fz-2xl); }
+h2 { font-size: var(--fz-xl); }
+h3 { font-size: var(--fz-lg); }
+p {
+  margin-bottom: 1rem;
+  font-size: var(--fz-base);
+  color: var(--gray-800);
+}
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: color var(--transition-base);
+}
+a:hover,
+a:focus {
+  color: var(--secondary);
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   5. Buttons (btn classes)
+   --------------------------------------------------------------------------
+   .btn .primary .secondary .success .error .warning
+   ========================================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: var(--fz-base);
+  font-weight: 500;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background-color var(--transition-base), color var(--transition-base);
+}
+.btn.primary {
+  background-color: var(--primary);
+  color: #fff;
+}
+.btn.primary:hover {
+  background-color: var(--secondary);
+}
+.btn.secondary {
+  background-color: #fff;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+}
+.btn.secondary:hover {
+  background-color: var(--primary);
+  color: #fff;
+}
+.btn.success {
+  background-color: var(--success);
+  color: #fff;
+}
+.btn.success:hover {
+  background-color: darken(var(--success), 10%);
+}
+.btn.error {
+  background-color: var(--error);
+  color: #fff;
+}
+.btn.error:hover {
+  background-color: darken(var(--error), 10%);
+}
+.btn.warning {
+  background-color: var(--warning);
+  color: var(--dark);
+}
+.btn.warning:hover {
+  background-color: darken(var(--warning), 10%);
+}
+.btn.disabled,
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   6. Preloader (رفض الوميض عند التحميل)
+   --------------------------------------------------------------------------
+   العنصر #preloader يختفي عند انتهاء التحميل
+   ========================================================================== */
+#preloader {
+  position: fixed;
+  inset: 0;
+  background-color: var(--light);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.spinner {
+  width: 3rem;
+  height: 3rem;
+  border: 4px solid var(--primary);
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ==========================================================================
+   7. Theme Toggle Button
+   --------------------------------------------------------------------------
+   زر لتبديل الوضع الفاتح/الداكن
+   ========================================================================== */
+.theme-toggle {
+  position: fixed;
+  bottom: 1rem;
+  left: 1rem;
+  background-color: var(--light);
+  border: 2px solid var(--gray-300);
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color var(--transition-base);
+  z-index: 1500;
+}
+.theme-toggle:hover {
+  background-color: var(--gray-200);
+}
+
+/* ==========================================================================
+   8. Header & Navbar
+   --------------------------------------------------------------------------
+   شريط التنقل العلوي sticky
+   ========================================================================== */
+.site-header {
+  background-color: #fff;
+  box-shadow: var(--shadow-medium);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.logo i {
+  font-size: 1.75rem;
+  color: var(--primary);
+}
+.logo span {
+  font-size: var(--fz-xl);
+  font-weight: 600;
+}
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.user-info span {
+  font-weight: 500;
+}
+.avatar {
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: var(--primary);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+}
+
+/* ==========================================================================
+   9. Social Sidebar
+   --------------------------------------------------------------------------
+   أيقونات تواصل اجتماعي على الجانب
+   ========================================================================== */
+.social-sidebar {
+  position: fixed;
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  z-index: 900;
+}
+.social-sidebar a {
+  background-color: #fff;
+  color: var(--primary);
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-light);
+  transition: background-color var(--transition-base), color var(--transition-base);
+}
+.social-sidebar a:hover {
+  background-color: var(--primary);
+  color: #fff;
+  transform: scale(1.1);
+}
+
+/* ==========================================================================
+   10. Main Sections (Units, Quiz, Results, Log)
+   --------------------------------------------------------------------------
+   إظهار القسم النشط فقط
+   ========================================================================== */
+.section {
+  display: none;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity var(--transition-base), transform var(--transition-base);
+  margin-top: 2rem;
+}
+.section.active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==========================================================================
+   11. Units Section
+   --------------------------------------------------------------------------
+   بطاقات الوحدة grid-3
+   ========================================================================== */
+.units-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px,1fr));
+  gap: 1.5rem;
+}
+.unit-card {
+  background-color: #fff;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-light);
+  padding: 1.25rem;
+  text-align: center;
+  cursor: pointer;
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+.unit-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-medium);
+}
+.unit-card i {
+  font-size: 2rem;
+  color: var(--primary);
+  margin-bottom: 0.75rem;
+}
+.unit-card h3 {
+  font-size: var(--fz-lg);
+  margin-bottom: 0.5rem;
+}
+.unit-card p {
+  font-size: var(--fz-sm);
+  color: var(--gray-600);
+}
+.unit-progress {
+  width: 100%;
+  height: 6px;
+  background-color: var(--gray-300);
+  border-radius: 999px;
+  margin-top: 1rem;
+  overflow: hidden;
+}
+.unit-progress-bar {
+  height: 100%;
+  background-color: var(--success);
+  width: 0%; /* تَحدُّثه عبر JS */
+  transition: width var(--transition-base);
+}
+
+/* ==========================================================================
+   12. Quiz Section
+   --------------------------------------------------------------------------
+   تهيئة المؤقت، شريط التقدم، وعرض الأسئلة
+   ========================================================================== */
+.quiz-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-light);
+}
+.timer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  font-size: var(--fz-base);
+}
+.timer i {
+  color: var(--primary);
+}
+.progress {
+  flex: 1;
+  margin-left: 1rem;
+}
+.progress-bar {
+  width: 100%;
+  height: 6px;
+  background-color: var(--gray-300);
+  border-radius: 999px;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+.progress-bar::before {
+  content: '';
+  display: block;
+  height: 100%;
+  width: 0; /* التحديث عبر JS */
+  background-color: var(--primary);
+  transition: width var(--transition-base);
+}
+.progress-text {
+  font-size: var(--fz-sm);
+  color: var(--gray-600);
+  text-align: left;
+  white-space: nowrap;
+}
+
+/* ==========================================================================
+   13. Quiz Container & Questions
+   --------------------------------------------------------------------------
+   صندوق السؤال وخيارات الإجابات
+   ========================================================================== */
+.quiz-container {
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-light);
+}
+.question-number {
+  font-size: var(--fz-sm);
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+.question-text {
+  font-size: var(--fz-lg);
+  font-weight: 500;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+.options {
+  display: grid;
+  gap: 0.75rem;
+}
+.option {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--gray-300);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background-color var(--transition-fast), border-color var(--transition-fast);
+}
+.option:hover {
+  border-color: var(--primary);
+  background-color: rgba(30,136,229,0.05);
+}
+.option input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+}
+.checkmark {
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid var(--gray-500);
+  border-radius: 50%;
+  position: relative;
+  flex-shrink: 0;
+  transition: background-color var(--transition-fast), border-color var(--transition-fast);
+}
+.option input[type="radio"]:checked ~ .checkmark {
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+.option input[type="radio"]:checked ~ .checkmark::after {
+  content: '';
+  position: absolute;
+  top: 2px; left: 2px;
+  width: 0.5rem; height: 0.5rem;
+  background-color: #fff;
+  border-radius: 50%;
+}
+
+/* ==========================================================================
+   14. Quiz Controls
+   --------------------------------------------------------------------------
+   أزرار التنقل السابق، التالي، انهاء الاختبار
+   ========================================================================== */
+.quiz-controls {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+.quiz-controls .btn {
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   15. Results Section
+   --------------------------------------------------------------------------
+   بطاقة عرض النتائج النهائية
+   ========================================================================== */
+.result-card {
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-light);
+  max-width: 600px;
+  margin: 0 auto;
+}
+.result-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+.result-badge {
+  background: linear-gradient(135deg, var(--primary), var(--success));
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: var(--fz-2xl);
+  font-weight: 600;
+  box-shadow: var(--shadow-medium);
+}
+.result-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px,1fr));
+  gap: 1rem;
+}
+.detail {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  background-color: var(--gray-100);
+  border-radius: var(--border-radius);
+}
+.detail i {
+  font-size: 1.25rem;
+}
+.detail i.success { color: var(--success); }
+.detail i.error   { color: var(--error); }
+
+/* ==========================================================================
+   16. Results Actions (إعادة، وحدات)
+   --------------------------------------------------------------------------
+   أزرار إعادة الاختبار والعودة للوحدات
+   ========================================================================== */
+.result-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* ==========================================================================
+   17. Results Log Section (جدول السجل)
+   --------------------------------------------------------------------------
+   تنسيق الجدول واستجابة الموبايل
+   ========================================================================== */
+.table-responsive {
+  overflow-x: auto;
+}
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.table th,
+.table td {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--gray-300);
+  text-align: center;
+  font-size: var(--fz-sm);
+}
+.table th {
+  background-color: var(--primary);
+  color: #fff;
+  font-weight: 500;
+}
+.table tbody tr:nth-child(even) {
+  background-color: var(--gray-200);
+}
+
+/* ==========================================================================
+   18. Utilities — مسافات، شبكات، فلكس، نص
+   --------------------------------------------------------------------------
+   u-m-*, u-p-*, u-grid-*, u-flex-*, text-*
+   ========================================================================== */
+/* Margins */
+.u-m-0 { margin: 0 !important; }
+.u-m-1 { margin: 0.25rem !important; }
+.u-m-2 { margin: 0.5rem  !important; }
+.u-m-3 { margin: 1rem    !important; }
+.u-m-4 { margin: 1.5rem  !important; }
+.u-m-5 { margin: 2rem    !important; }
+/* Paddings */
+.u-p-0 { padding: 0 !important; }
+.u-p-1 { padding: 0.25rem !important; }
+.u-p-2 { padding: 0.5rem  !important; }
+.u-p-3 { padding: 1rem    !important; }
+.u-p-4 { padding: 1.5rem  !important; }
+.u-p-5 { padding: 2rem    !important; }
+/* Grid Helpers */
+.u-grid-2 { display: grid; grid-template-columns: repeat(2,1fr); gap:1rem; }
+.u-grid-3 { display: grid; grid-template-columns: repeat(3,1fr); gap:1rem; }
+.u-grid-4 { display: grid; grid-template-columns: repeat(4,1fr); gap:1rem; }
+.u-grid-5 { display: grid; grid-template-columns: repeat(5,1fr); gap:1rem; }
+/* Flex Helpers */
+.u-flex      { display: flex !important; }
+.u-flex-center { display:flex; align-items:center; justify-content:center; }
+.u-flex-between { display:flex; align-items:center; justify-content:space-between; }
+/* Text Alignment */
+.text-center { text-align: center !important; }
+.text-left   { text-align: left   !important; }
+.text-right  { text-align: right  !important; }
+/* Display Helpers */
+.d-block { display: block !important; }
+.d-inline-block { display: inline-block !important; }
+.d-none   { display: none !important; }
+
+/* ==========================================================================
+   19. Responsive Breakpoints (Mobile First)
+   --------------------------------------------------------------------------
+   تعديل نقاط التوقف حسب الحاجة
+   ========================================================================== */
+@media (min-width: 576px) {
+  /* sm */
+}
+@media (min-width: 768px) {
+  /* md */
+  .quiz-controls { flex-direction: row; }
+}
+@media (min-width: 992px) {
+  /* lg */
+}
+@media (min-width: 1200px) {
+  /* xl */
+}
+
+/* ==========================================================================
+   20. Dark Mode Support
+   --------------------------------------------------------------------------
+   يتم التفعيل تلقائياً عند تفضيل الجهاز للوضع الداكن
+   ========================================================================== */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: var(--dark);
+    color: var(--light);
+  }
+  header, .quiz-info, .quiz-container, .result-card, .unit-card, .table th {
+    background-color: var(--gray-900);
+    color: var(--light);
+  }
+  .social-sidebar a, .btn.secondary {
+    background-color: var(--gray-800);
+    border-color: var(--gray-600);
+  }
+}
+
+/* ==========================================================================
+   21. Animations & Effects
+   --------------------------------------------------------------------------
+   shake, fadeIn, fadeOut, bounce
+   ========================================================================== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+@keyframes shake {
+  0%,100% { transform: translateX(0); }
+  25%,75% { transform: translateX(5px); }
+  50%      { transform: translateX(-5px); }
+}
+@keyframes bounce {
+  0%,100% { transform: translateY(0); }
+  50%      { transform: translateY(-10px); }
+}
+.fade-in { animation: fadeIn 0.5s ease both; }
+.fade-out { animation: fadeOut 0.5s ease both; }
+.shake { animation: shake 0.3s ease both; }
+.bounce { animation: bounce 0.6s ease both; }
+
+/* ==========================================================================
+   22. Forms & Inputs
+   --------------------------------------------------------------------------
+   تنسيق حقول النصوص والاختيارات
+   ========================================================================== */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select,
+textarea {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--gray-300);
+  border-radius: var(--border-radius);
+  font-size: var(--fz-base);
+  transition: border-color var(--transition-base), box-shadow var(--transition-base);
+}
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(30,136,229,0.2);
+}
+
+/* ==========================================================================
+   23. Tables & Data Display
+   --------------------------------------------------------------------------
+   خطوط أفقية وفوقية، ألوان صفوف بديلة

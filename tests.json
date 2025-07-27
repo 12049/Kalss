@@ -1,0 +1,218 @@
+[
+  {
+    "unitId": 1,
+    "question": "Which is the correct plural of 'child'?",
+    "options": ["childs", "children", "childes", "child"],
+    "correctAnswer": 1
+  },
+  {
+    "unitId": 1,
+    "question": "Select the correct article: 'I saw ___ elephant at the zoo.'",
+    "options": ["a", "an", "the", "no article"],
+    "correctAnswer": 1
+  },
+  {
+    "unitId": 1,
+    "question": "Choose the correct verb form: 'She ___ to school every day.'",
+    "options": ["go", "goes", "going", "gone"],
+    "correctAnswer": 1
+  },
+  {
+    "unitId": 2,
+    "question": "They ___ lunch at noon every day.",
+    "options": ["eat", "eats", "ate", "eaten"],
+    "correctAnswer": 0
+  },
+  {
+    "unitId": 2,
+    "question": "He ___ home yesterday.",
+    "options": ["go", "went", "gone", "was going"],
+    "correctAnswer": 1
+  },
+  {
+    "unitId": 2,
+    "question": "I ___ in Paris in 2010.",
+    "options": ["live", "lived", "has lived", "am living"],
+    "correctAnswer": 1
+  },
+  {
+    "unitId": 3,
+    "question": "Right now, she ___ a book.",
+    "options": ["reads", "is reading", "reading", "read"],
+    "correctAnswer": 1
+  },
+  {
+    "unitId": 3,
+    "question": "They ___ for the bus when it arrived.",
+    "options": ["were waiting", "waited", "have waited", "waiting"],
+    "correctAnswer": 0
+  },
+  {
+    "unitId": 3,
+    "question": "This time tomorrow, I ___ on the beach.",
+    "options": ["am relaxing", "will be relaxing", "relax", "will relax"],
+    "correctAnswer": 1
+  },
+  {
+    "unitId": 4,
+    "question": "The cake ___ by my mother.",
+    "options": ["was baked", "baked", "is baking", "will be baked"],
+    "correctAnswer": 0
+  },
+  {
+    "unitId": 4,
+    "question": "Convert to passive: 'They will finish the project by next week.' → 'The project ___ by next week.'",
+    "options": ["will be finished", "will have finished", "is finished", "is being finished"],
+    "correctAnswer": 0
+  },
+  {
+    "unitId": 4,
+    "question": "Convert to active: 'The letter is written by John.' → 'John ___ the letter.'",
+    "options": ["is writing", "writes", "wrote", "has written"],
+    "correctAnswer": 2
+  },
+  {
+    "unitId": 5,
+    "question": "___ is my brother.",
+    "options": ["Him", "He", "His", "He is"],
+    "correctAnswer": 1
+  },
+  {
+    "unitId": 5,
+    "question": "I gave the book to ___.",
+    "options": ["she", "her", "hers", "he"],
+    "correctAnswer": 1
+  },
+  {
+    "unitId": 5,
+    "question": "The dog wagged ___ tail.",
+    "options": ["it's", "its", "his", "her"],
+    "correctAnswer": 1
+  },
+  {
+    "unitId": 6,
+    "question": "She sings ___.",
+    "options": ["beautiful", "beautifully", "more beautiful", "beautifuly"],
+    "correctAnswer": 1
+  },
+  {
+    "unitId": 6,
+    "question": "He is a ___ runner.",
+    "options": ["quick", "quickly", "more quickly", "quickness"],
+    "correctAnswer": 0
+  },
+  {
+    "unitId": 6,
+    "question": "This is the ___ mountain I've ever climbed.",
+    "options": ["more difficult", "most difficult", "difficult", "most more difficult"],
+    "correctAnswer": 1
+  },
+  {
+    "unitId": 7,
+    "question": "I like tea ___ coffee.",
+    "options": ["and", "but", "or", "so"],
+    "correctAnswer": 0
+  },
+  {
+    "unitId": 7,
+    "question": "She is tired, ___ she will rest.",
+    "options": ["so", "but", "or", "and"],
+    "correctAnswer": 0
+  },
+  {
+    "unitId": 7,
+    "question": "You can take an apple ___ an orange.",
+    "options": ["and", "but", "or", "so"],
+    "correctAnswer": 2
+  },
+  {
+    "unitId": 8,
+    "question": "If it ___ tomorrow, we will stay home.",
+    "options": ["rains", "rain", "will rain", "rained"],
+    "correctAnswer": 0
+  },
+  {
+    "unitId": 8,
+    "question": "If I had known, I ___ you.",
+    "options": ["would tell", "would have told", "will tell", "told"],
+    "correctAnswer": 1
+  },
+  {
+    "unitId": 8,
+    "question": "If he studies hard, he ___ the exam.",
+    "options": ["will pass", "would pass", "passes", "passed"],
+    "correctAnswer": 0
+  },
+  {
+    "unitId": 9,
+    "question": "This book is ___ than that one.",
+    "options": ["interesting", "more interesting", "most interesting", "interestinger"],
+    "correctAnswer": 1
+  },
+  {
+    "unitId": 9,
+    "question": "She is the ___ student in the class.",
+    "options": ["smart", "smarter", "most smart", "smartest"],
+    "correctAnswer": 3
+  },
+  {
+    "unitId": 9,
+    "question": "His car is ___ than mine.",
+    "options": ["expensive", "more expensive", "most expensive", "expensiver"],
+    "correctAnswer": 1
+  },
+  {
+    "unitId": 10,
+    "question": "He can ___ the piano.",
+    "options": ["play", "to play", "played", "playing"],
+    "correctAnswer": 0
+  },
+  {
+    "unitId": 10,
+    "question": "She wants ___ a famous singer.",
+    "options": ["be", "to be", "being", "been"],
+    "correctAnswer": 1
+  },
+  {
+    "unitId": 10,
+    "question": "You must ___ your homework.",
+    "options": ["finish", "finishing", "to finish", "finished"],
+    "correctAnswer": 0
+  },
+  {
+    "unitId": 11,
+    "question": "Despite ___ hard, he failed.",
+    "options": ["studies", "studying", "to study", "study"],
+    "correctAnswer": 1
+  },
+  {
+    "unitId": 11,
+    "question": "No sooner ___ than she left.",
+    "options": ["had I arrived", "I had arrived", "did I arrive", "I arrived"],
+    "correctAnswer": 0
+  },
+  {
+    "unitId": 11,
+    "question": "Hardly ___ when he fell.",
+    "options": ["he got up", "got he up", "had he got up", "had he gotten up"],
+    "correctAnswer": 2
+  },
+  {
+    "unitId": 12,
+    "question": "Choose the correct sentence.",
+    "options": ["She don't like it.", "She doesn't like it.", "She doesn't likes it.", "She no like it."],
+    "correctAnswer": 1
+  },
+  {
+    "unitId": 12,
+    "question": "Select the best synonym for 'happy'.",
+    "options": ["sad", "joyful", "angry", "tired"],
+    "correctAnswer": 1
+  },
+  {
+    "unitId": 12,
+    "question": "Fill in the blank: 'They ___ been here before.'",
+    "options": ["has", "have", "had", "having"],
+    "correctAnswer": 1
+  }
+]
